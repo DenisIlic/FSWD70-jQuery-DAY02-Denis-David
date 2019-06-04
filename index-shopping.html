@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:900|Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header" class="flex">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Gems</a></li>
+                    <li><a href="#">Crystals</a></li>
+                    <li><a href="#">Geodes</a></li>
+                </ul>
+            </nav>
+            <div id="shopping">
+                <a id="minicart" href="#cart">Shopping Cart <i class="fa fa-caret-down"></i></a>
+                <div id="dropdown-content">
+                </div>
+            </div>
+        </div>
+        <div id="banner">
+            <h1>Crystal Clear</h1>
+        </div>
+        <div id="container">
+            <div id="shop" class="flex">
+                <div id="quartz" class="row">
+                    <div class="item">
+                        <div class="img"></div>
+                        <div class="text"></div>
+                        <button class="button"><span>Add to Cart</span></button>
+                    </div>
+                    <div class="item">
+                        <div class="img"></div>
+                        <div class="text"></div>
+                        <button class="button"><span>Add to Cart</span></button>
+                    </div>
+                    <div class="item">
+                        <div class="img"></div>
+                        <div class="text"></div>
+                        <button class="button"><span>Add to Cart</span></button>
+                    </div>
+                    <div class="item">
+                        <div class="img"></div>
+                        <div class="text"></div>
+                        <button class="button"><span>Add to Cart</span></button>
+                    </div>
+                </div>
+                <div id="crystals" class="row">
+                    <div class="item">
+                        <div class="img"></div>
+                        <div class="text"></div>
+                        <button class="button"><span>Add to Cart</span></button>
+                    </div>
+                    <div class="item">
+                        <div class="img"></div>
+                        <div class="text"></div>
+                        <button class="button"><span>Add to Cart</span></button>
+                    </div>
+                    <div class="item">
+                        <div class="img"></div>
+                        <div class="text"></div>
+                        <button class="button"><span>Add to Cart</span></button>
+                    </div>
+                    <div class="item">
+                        <div class="img"></div>
+                        <div class="text"></div>
+                        <button class="button"><span>Add to Cart</span></button>
+                    </div>
+                </div>
+            </div>
+            <div id="cart" class="flex">
+                <h2>Your cart</h2>
+                <div id="bought" class="flex"></div>
+                <div id="total">
+                    <p>Your Total:</p>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="flex">
+            <p>Crystal Clear, All rights reserverd</p>
+            <p>Contact</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script>
+    for (let i = 0; i < products.length; i++) {
+        document.getElementsByClassName("img")[i].innerHTML += "<img src=" + products[i].image + ">";
+    }
+
+    for (let i = 0; i < products.length; i++) {
+        document.getElementsByClassName("text")[i].innerHTML = "<h3>" + products[i].name + "</h3>" + "<p>" + products[i].price + "$</p>"
+    }
+
+    // button add to cart
+    var cart = [];
+    var btn = document.getElementsByClassName("button");
+
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function() { btnAdd(products[i], i) }, false);
+        btn[i].addEventListener("click", function() { sum(cart) }, false);
+    }
+
+    function btnAdd(product, i) {
+        //if this product already exists then add +1 to its quantity
+        if (cart[i] != undefined) {
+            cart[i].quantity++;
+        } else {
+            cart[i] = product;
+        }
+        rewriteCart();
+    }
+
+    //overwrites previous cart 
+    function rewriteCart() {
+        var minus = " class = 'minus'";
+        document.getElementById("bought").innerHTML = "";
+        for (let j = 0; j < cart.length; j++) {
+            if (cart[j] != undefined) {
+                document.getElementById("bought").innerHTML += "<p>" + cart[j].name + "</p>" + "<p>" + cart[j].quantity + "</p>" + "<p>" + cart[j].price * cart[j].quantity + "</p>" + "<button" + minus + ">" + "- </button";
+            }
+        }
+        //takes all minus buttons in the array and applies the remove from cart function to each one of them, if the item exists
+        var k = 0;
+        var minusButtons = document.getElementsByClassName("minus");
+        for (let j = 0; j < cart.length; j++) {
+            if (cart[j] != undefined) {
+                minusButtons[k].addEventListener("click", function() { removeFromCart(j) }, false);
+                k++;
+            }
+        }
+    }
+
+
+    function removeFromCart(i) {
+        if (cart[i].quantity > 1) {
+            cart[i].quantity--;
+        } else {
+            cart[i] = undefined; // if quantity is less or equal to 0 the item does note exist
+        }
+        rewriteCart(); //overwrites cart
+        sum(cart); // overwrites sum
+    }
+
+    function sum(currentCart) {
+        var total = 0;
+
+        for (let j = 0; j < currentCart.length; j++) {
+            if (currentCart[j] != undefined) {
+                total += currentCart[j].price * currentCart[j].quantity;
+            }
+        }
+        document.getElementById("total").innerHTML = "<p>" + total.toFixed(2) + "</p>";
+    }
+    </script>
+</body>
+
+</html>
