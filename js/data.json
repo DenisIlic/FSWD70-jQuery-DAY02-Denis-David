@@ -1,0 +1,49 @@
+var products = [
+{
+    "image": "img/Mr.Bean_car.webp",
+    "name": "Mr. Bean Car",
+    "quantity": 1,
+    "price": 22.95
+},
+{
+    "image": "img/polo.jpg",
+    "name": "VW Polo",
+    "quantity": 1,
+    "price": 15.95
+},
+{
+    "image": "img/range_rover.jpg",
+    "name": "Range Rover Sport",
+    "quantity": 1,
+    "price": 30.95
+},
+{
+    "image": "img/lamborghini.jpg",
+    "name": "Lamborghini",
+    "quantity": 1,
+    "price": 35.95
+},
+{
+    "image": "img/renault.jpg",
+    "name": "Renault",
+    "quantity": 1,
+    "price": 12.95
+},
+{
+    "image": "img/Ford.jpg",
+    "name": "Ford",
+    "quantity": 1,
+    "price": 12.95
+},
+{
+    "image": "img/chayenne.jpg",
+    "name": "Porsche Chayenne",
+    "quantity": 1,
+    "price": 30.95
+},
+{
+    "image": "img/panamera.jpg",
+    "name": "Porsche Panamera",
+    "quantity": 1,
+    "price": 25.95
+}];

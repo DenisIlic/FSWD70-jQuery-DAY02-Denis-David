@@ -1,49 +1,49 @@
 var products = [
 {
-    "image": "img/quartz.jpg",
-    "name": "Transparent Quartz",
+    "image": "img/Mr.Bean_car.webp",
+    "name": "Mr.Bean Car",
     "quantity": 1,
     "price": 22.95
 },
 {
-    "image": "img/bluecelestine.jpg",
-    "name": "Kyanite Egg Geode",
+    "image": "img/lamborghini.jpg",
+    "name": "Lamborghini",
     "quantity": 1,
     "price": 23.95
 },
 {
-    "image": "img/amethyst.jpg",
-    "name": "Amethyst",
+    "image": "img/chayenne.jpg",
+    "name": "Porsche Chayenne",
     "quantity": 1,
     "price": 30.95
 },
 {
-    "image": "img/white.jpg",
-    "name": "Crystal Cluster, White",
+    "image": "img/ford.jpg",
+    "name": "Ford",
     "quantity": 1,
     "price": 26.95
 },
 {
-    "image": "img/crystalpurple.jpg",
-    "name": "Crystal Cluster, Purple",
+    "image": "img/panamera.jpg",
+    "name": "Porsche Panamera",
     "quantity": 1,
     "price": 27.95
 },
 {
-    "image": "img/crystalblue.jpg",
-    "name": "Crystal Cluster, Blue",
+    "image": "img/polo.jpg",
+    "name": "VW Polo",
     "quantity": 1,
     "price": 20.95
 },
 {
-    "image": "img/green.jpg",
-    "name": "Jade Pillar",
+    "image": "img/range_rover.jpg",
+    "name": "Range Rover Sport",
     "quantity": 1,
     "price": 26.95
 },
 {
-    "image": "img/transparent.jpg",
-    "name": "Quartz Cluster",
+    "image": "img/renault.jpg",
+    "name": "Reanult",
     "quantity": 1,
     "price": 20.95
 }];
