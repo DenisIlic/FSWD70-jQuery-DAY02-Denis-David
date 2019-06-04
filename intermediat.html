@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styleFabian.css">
+	<meta charset="utf-8">
+	<title>Challenge</title>
+	
+</head>
+<body>
+	
+	<div id="headerContainer">
+		<header>
+			<!-- Start firstline Header -->
+			<div id="header-line-first">
+				<div>
+					MAFA Shop
+				</div>	
+				<div>
+					<img src="cart.png" id="showCart">
+				</div>
+				<div id="header-line-first-navbar">
+					<ul>
+						<li><a href="">Home</a></li>
+						<li>|</li>
+						<li><a href="">Tech</a></li>
+						<li>|</li>
+						<li><a href="">Culture</a></li>
+						<li>|</li>
+						<li><a href="">Video</a></li>
+					</ul>
+				</div>
+
+
+			</div>
+			<!-- End firstline Header -->
+
+			<div id="header-line-second">
+				<div id="header-line-two-navbar">
+					<ul>
+							<li><a href="">Test1</a></li>
+							<li><a href="">Test2</a></li>
+							<li><a href="">Test3</a></li>
+							<li><a href="">Test4</a></li>
+							<li><a href="">Test5</a></li>
+							<li><a href="">Test6</a></li>
+					</ul>
+				</div>
+				
+				<div id="header-line-two-navbar">
+					<input type="text" name="search" value="search">
+				</div>
+		</header>
+	</div>	
+<!-- _________________________________End Header Container -->
+
+
+	<div id="main-Container">
+		<div id="main-Container-line-one">
+
+			<div class="card">
+  				<img src="eReader.jpg" alt="Avatar" style="width:100%">
+			    <div class="container">
+			     	<button value="ereader" class="addButton"> Add </button>
+			     	<button value="ereader" class="removeButton"> Remove </button>
+			    </div>
+			</div>
+
+			<div class="card">
+  				<img src="Handy.jpg" alt="Avatar" style="width:100%">
+			    <div class="container">
+			     	<button value="handy" class="addButton"> Add </button>
+			     	<button value="ereader" class="removeButton"> Remove </button>
+			    </div>
+			</div>
+
+
+			<div class="card">
+  				<img src="laser1.jpg" alt="Avatar" style="width:100%">
+			    <div class="container">
+			     	<button value="laser1" class="addButton"> Add </button>
+			     	<button value="ereader" class="removeButton"> Remove </button>
+			    </div>
+			</div>
+		</div>
+
+		<div id="main-Container-line-two">
+
+			<div class="card">
+  				<img src="Tablet.jpg" alt="Avatar" style="width:100%">
+			    <div class="container">
+			     	<button value="tablet" class="addButton"> Add </button>
+			     	<button value="ereader"class="removeButton"> Remove </button>
+			    </div>
+			</div>
+
+			<div class="card">
+  				<img src="speaker.jpg" alt="Avatar" style="width:100%">
+			    <div class="container">
+			     	<button value="speaker" class="addButton"> Add </button>
+			     	<button class="removeButton"> Remove </button>
+			    </div>
+			</div>
+
+
+			<div class="card">
+  				<img src="tv.jpg" alt="Avatar" style="width:100%">
+			    <div class="container">
+			     	<button value="tv" class="addButton"> Add </button>
+			     	<button class="removeButton"> Remove </button>
+				</div>		
+			</div>	
+
+		</div>
+
+
+	<div>
+		Footer
+	</div>
+	
+	
+	<script type="text/javascript">
+			
+		window.onload= function () {
+   		for (i=0;i<6;i++) {
+   			document.getElementsByClassName("addButton")[i].onclick= addToCart;
+		};
+
+   		for (i=0;i<6;i++) {
+   			document.getElementsByClassName("removeButton")[i].onclick= removeFromCart;
+		}; 
+
+	}
+
+
+
+		var cart= []; 
+		
+		var products = {
+
+   			"hifi": [
+   			{
+
+       		"id": "01",
+
+       		"language": "Java",
+
+       		"edition": "third",
+
+       		"author": "Herbert Schildt"
+   			}
+   			,
+   			{
+
+	       "id": "07",
+
+	       "language": "C++",
+
+	       "edition": "second",
+
+	       "author": "E.Balagurusamy"
+   			}] };
+
+
+   			function addToCart(event) {
+   				var addProduct = event.target.value;
+   				 // alert(addProduct);
+   				 cart.push(addProduct);
+   				// cart.push(param);
+   			};
+
+   			function removeFromCart(event) {
+   				var removeProduct = event.target.value;
+   				alert(removeProduct);
+   				 // alert(removeProduct);
+   				 // cart.push(addProduct);
+   				// cart.push(param);
+   			};
+
+
+		document.getElementById("showCart").addEventListener("click", function(){
+ 			alert(cart);
+		});
+
+	</script>
+	<script src="grocery.js"></script>
+
+</body>
+</html>
+
+	<!-- // var cart= []; 
+
+		// function addToCart(param) {
+		// 	cart.push(param);
+		// };
+
+		// function removeFromCart (param) {
+		// 	// var array = [2, 5,5, 9];
+		// 	// document.write(array)
+		// 	var index = cart.indexOf(param);
+		// 	if (index > -1) {
+  // 				cart.splice(index, 1);
+		// 		}
+		// 	}
+
+		// function showCart() {
+		// 	alert(cart);
+		// }; -->
